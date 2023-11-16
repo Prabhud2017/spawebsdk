@@ -21,7 +21,7 @@
   </script>
   <script src="https://assets.adobedtm.com/2fd35f2549c1/d32c96b58c12/launch-7b2944c8184c-development.min.js" async></script>
   <script>
-    function viewChange (viewName) { const event = new CustomEvent("viewChange", { detail: viewName}); dispatchEvent(event); }
+    function viewChange (dynamicViewName) { window.viewName = dynamicViewName; const event = new CustomEvent("viewChange", { detail: dynamicViewName}); dispatchEvent(event); }
   </script>
   
   <!-- Favicons -->
