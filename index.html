@@ -20,6 +20,9 @@
       window.viewName = "home";
   </script>
   <script src="https://assets.adobedtm.com/2fd35f2549c1/d32c96b58c12/launch-7b2944c8184c-development.min.js" async></script>
+  <script>
+    function viewChange (viewName) { const event = new CustomEvent("viewChange", { detail: viewName}); dispatchEvent(event); }
+  </script>
   
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -65,13 +68,13 @@
       <!-- Nav Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero" class="active">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#portfolio">Portfolio</a></li>
-          <li><a href="index.html#team">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown has-dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a href="index.html#hero" class="active" onclick="javascript:viewChange('Home');">Home</a></li>
+          <li><a href="index.html#about" onclick="javascript:viewChange('About');">About</a></li>
+          <li><a href="index.html#services" onclick="javascript:viewChange('Services');">Services</a></li>
+          <li><a href="index.html#portfolio" onclick="javascript:viewChange('Portfolio');">Portfolio</a></li>
+          <li><a href="index.html#team" onclick="javascript:viewChange('Team');">Team</a></li>
+          <li><a href="blog.html" onclick="javascript:viewChange('Blog');">Blog</a></li>
+          <li class="dropdown has-dropdown" onclick="javascript:viewChange('Dropdown');"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down"></i></a>
             <ul class="dd-box-shadow">
               <li><a href="#">Dropdown 1</a></li>
               <li class="dropdown has-dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down"></i></a>
@@ -88,7 +91,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#contact" onclick="javascript:viewChange('Contact');">Contact</a></li>
         </ul>
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
